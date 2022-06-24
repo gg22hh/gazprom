@@ -12,3 +12,19 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+.popup {
+    width: 200px;
+    height: auto;
+}
+.popup__name {
+    font-size: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.popup__image {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

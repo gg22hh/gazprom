@@ -3,10 +3,15 @@ import { EditForm } from "../EditForm/EditForm";
 import { Place } from "./components/Place/Place";
 import s from "./Places.module.css";
 
-export const Places = ({ places, setPlaces }) => {
+export const Places = ({
+    places,
+    setPlaces,
+    search,
+    setSearch,
+    setShowOnMap,
+}) => {
     const [show, setShow] = useState(false);
     const [filtredPlaces, setFiltredPlaces] = useState(places);
-    const [search, setSearch] = useState("");
     const [changedName, setChangedName] = useState("");
     const [changedX, setChangedX] = useState("");
     const [changedY, setChangedY] = useState("");
@@ -36,6 +41,11 @@ export const Places = ({ places, setPlaces }) => {
         setPosition(i);
     };
 
+    const showAllPlaces = () => {
+        setShowOnMap("");
+        setSearch("");
+    };
+
     useEffect(() => {
         setFiltredPlaces(
             places?.filter((place) =>
@@ -57,13 +67,25 @@ export const Places = ({ places, setPlaces }) => {
     });
     return (
         <>
-            <input
-                className={s.search}
-                placeholder="Поиск"
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-            />
+            <div className={s.search}>
+                <input
+                    className={s.input}
+                    placeholder="Поиск"
+                    type="text"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+                <button
+                    className={s.button}
+                    onClick={() => setShowOnMap(search)}
+                >
+                    Показать
+                </button>
+                <button className={s.button} onClick={showAllPlaces}>
+                    &#8634;
+                </button>
+            </div>
+
             <table className={s.table}>
                 <thead>
                     <tr>

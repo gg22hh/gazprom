@@ -13,9 +13,11 @@ export const Map = ({ places }) => {
             return DG.marker(item.place)
                 .addTo(map)
                 .bindPopup(
-                    `<div>${item.name}</div><img src='/images/${item.name
+                    `<div class="popup"><div class="popup__name">${
+                        item.name
+                    }</div><img class="popup__image" src='/images/${item.name
                         .toLowerCase()
-                        .replace(" ", "_")}.jpg' alt="building" />`
+                        .replace(" ", "_")}.jpg' alt="building" /></div>`
                 );
         });
 
