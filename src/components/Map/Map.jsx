@@ -1,21 +1,7 @@
 import DG from "2gis-maps";
 import { useEffect } from "react";
 
-export const Map = ({ places, setPlaces }) => {
-    useEffect(() => {
-        const getPlaces = async () => {
-            const res = await fetch(
-                "https://62b48976da3017eabb0cb5ed.mockapi.io/places"
-            );
-            if (res.ok) {
-                const json = await res.json();
-                setPlaces(json);
-            } else {
-                console.log("error");
-            }
-        };
-        getPlaces();
-    }, [setPlaces]);
+export const Map = ({ places }) => {
     useEffect(() => {
         let map;
         map = DG.map("map-container", {

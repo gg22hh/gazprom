@@ -12,9 +12,8 @@
 }
 .form button {
     margin: 10px auto 0;
-    padding: 7px 15px;
+    padding: 3px 15px;
     border: 1px solid black;
-    border-radius: 18px;
     transition: all 0.3s;
 }
 .form button:hover {

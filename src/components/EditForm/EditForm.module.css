@@ -1,0 +1,41 @@
+.form {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background-color: #fff;
+    z-index: 5;
+    padding: 30px;
+    width: 35vw;
+}
+.form h1 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form button {
+    padding: 3px 15px;
+    border: 1px solid black;
+    margin: 30px auto 0;
+    transition: all 0.2s;
+}
+.form button:hover {
+    background-color: black;
+    color: white;
+}
+.form input {
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+    padding: 3px 15px;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35vw;
+    height: 100vh;
+    background-color: rgba(17, 15, 15, 0.438);
+    z-index: 3;
+}

@@ -9,4 +9,6 @@
 .content__info {
     height: 100vh;
     width: 35vw;
+    overflow: hidden;
+    overflow-y: scroll;
 }
