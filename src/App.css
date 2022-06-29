@@ -13,7 +13,6 @@
     overflow-y: scroll;
 }
 .popup {
-    width: 200px;
     height: auto;
 }
 .popup__name {
@@ -22,9 +21,26 @@
     text-transform: uppercase;
     margin-bottom: 10px;
 }
-.popup__image {
-    width: 200px;
+.popup__info {
     display: flex;
-    justify-content: center;
+    gap: 20px;
+}
+.popup__info-item {
+    min-width: 200px;
+}
+.popup__info-item div {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid gray;
+    padding: 2px 0;
+    text-align: right;
+}
+.popup__info-item div strong {
+    text-align: left;
+}
+.leaflet-popup-content-wrapper {
+    width: auto !important;
+    max-height: auto !important;
 }

@@ -16,6 +16,9 @@ export const Places = ({
     const [changedX, setChangedX] = useState("");
     const [changedY, setChangedY] = useState("");
     const [position, setPosition] = useState();
+    const [info, setInfo] = useState({});
+    const [building, setBuilding] = useState({});
+    const [kvartirs, setKvartirs] = useState({});
     const deletePlace = async (id) => {
         const areYouSure = window.confirm("Are you sure?");
         if (areYouSure) {
@@ -38,6 +41,9 @@ export const Places = ({
         setChangedName(place.name);
         setChangedX(place.place[0]);
         setChangedY(place.place[1]);
+        setInfo(place.info);
+        setBuilding(place.building);
+        setKvartirs(place.kvartir);
         setPosition(i);
     };
 
@@ -110,6 +116,12 @@ export const Places = ({
                     setChangedY={setChangedY}
                     setShow={setShow}
                     position={position}
+                    setInfo={setInfo}
+                    info={info}
+                    building={building}
+                    kvartirs={kvartirs}
+                    setBuilding={setBuilding}
+                    setKvartirs={setKvartirs}
                 />
             )}
         </>

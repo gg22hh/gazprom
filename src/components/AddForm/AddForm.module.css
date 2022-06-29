@@ -1,22 +1,28 @@
 .form {
     text-align: center;
     padding: 20px;
-    margin: 0 auto;
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    width: 35vw;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .form input {
-    margin: 0 auto;
     padding: 3px 15px;
     border: 1px solid gray;
     border-radius: 8px;
     margin-bottom: 5px;
 }
-.form button {
+.button {
     margin: 10px auto 0;
     padding: 3px 15px;
     border: 1px solid black;
     transition: all 0.3s;
 }
-.form button:hover {
+.button:hover {
     background-color: black;
     color: white;
 }
@@ -24,4 +30,24 @@
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 20px;
+}
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 550px;
+}
+.block label {
+    text-align: left;
+}
+.block__name {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none !important;
 }

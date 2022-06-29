@@ -1,12 +1,14 @@
 .form {
     position: fixed;
-    top: 50%;
+    top: 0;
     right: 0;
-    transform: translate(0, -50%);
     background-color: #fff;
     z-index: 5;
     padding: 30px;
     width: 35vw;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .form h1 {
     font-size: 20px;
@@ -14,21 +16,21 @@
     text-align: center;
     margin-bottom: 30px;
 }
-.form button {
+.button {
     padding: 3px 15px;
     border: 1px solid black;
     margin: 30px auto 0;
     transition: all 0.2s;
 }
-.form button:hover {
+.button:hover {
     background-color: black;
     color: white;
 }
 .form input {
     border: 1px solid gray;
     border-radius: 8px;
-    margin: 0 auto 10px;
     padding: 3px 15px;
+    margin-bottom: 5px;
 }
 .overlay {
     position: fixed;
@@ -38,4 +40,23 @@
     height: 100vh;
     background-color: rgba(17, 15, 15, 0.438);
     z-index: 3;
+}
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 550px;
+}
+.block label {
+    text-align: left;
+}
+.block__name {
+    font-weight: 600;
+    margin-bottom: 10px;
 }
