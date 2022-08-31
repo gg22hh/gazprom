@@ -23,8 +23,8 @@ export const EditForm = ({
    const changePost = async (e) => {
       e.preventDefault();
 
-      let updatedPosts = places.filter((item) => item.id === position);
-      console.log(updatedPosts);
+      let updatedPosts = places.some((item) => item.id === position);
+
       updatedPosts = {
          ...updatedPosts,
          name: changedName,
@@ -35,7 +35,7 @@ export const EditForm = ({
       };
 
       const response = await fetch(
-         "https://62b48976da3017eabb0cb5ed.mockapi.io/places/" + position,
+         "https://6303a6270de3cd918b3b3fda.mockapi.io/gggg/" + position,
          {
             method: "PUT",
             headers: {

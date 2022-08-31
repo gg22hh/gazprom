@@ -23,7 +23,7 @@ export const Places = ({
       const areYouSure = window.confirm("Are you sure?");
       if (areYouSure) {
          const response = await fetch(
-            "https://62b48976da3017eabb0cb5ed.mockapi.io/places/" + id,
+            "https://6303a6270de3cd918b3b3fda.mockapi.io/gggg/" + id,
             {
                method: "DELETE",
             }

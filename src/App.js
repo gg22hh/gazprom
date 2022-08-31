@@ -11,7 +11,7 @@ function App() {
    useEffect(() => {
       const getPlaces = async () => {
          fetch(
-            `https://62b48976da3017eabb0cb5ed.mockapi.io/places?search=${showOnMap}`
+            `https://6303a6270de3cd918b3b3fda.mockapi.io/gggg?search=${showOnMap}`
          )
             .then((res) => res.json())
             .then((arr) => setPlaces(arr));

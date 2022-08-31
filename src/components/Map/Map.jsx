@@ -2,18 +2,18 @@ import DG from "2gis-maps";
 import { useEffect } from "react";
 
 export const Map = ({ places }) => {
-    useEffect(() => {
-        let map;
-        map = DG.map("map-container", {
-            center: [42.96789913375842, 47.51181100753268],
-            zoom: 13,
-        });
+   useEffect(() => {
+      let map;
+      map = DG.map("map-container", {
+         center: [42.97693891639403, 47.4541483180836],
+         zoom: 13,
+      });
 
-        places.map((item, i) => {
-            return DG.marker(item.place)
-                .addTo(map)
-                .bindPopup(
-                    `<div class="popup"><div class="popup__name">${item.name}</div>
+      places.map((item, i) => {
+         return DG.marker(item.place)
+            .addTo(map)
+            .bindPopup(
+               `<div class="popup"><div class="popup__name">${item.name}</div>
 						<div class="popup__info">
 						<div class="popup__info-item">
 							<div><strong>Информация об источнике газоснабжения объекта</strong></div>
@@ -76,15 +76,12 @@ export const Map = ({ places }) => {
 						
 						</div>
 					</div>`
-                );
-        });
+            );
+      });
 
-        return () => map && map.remove();
-    }, [places]);
-    return (
-        <div
-            id="map-container"
-            style={{ width: "65vw", height: "100vh" }}
-        ></div>
-    );
+      return () => map && map.remove();
+   }, [places]);
+   return (
+      <div id="map-container" style={{ width: "65vw", height: "100vh" }}></div>
+   );
 };
