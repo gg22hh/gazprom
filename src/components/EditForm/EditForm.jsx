@@ -19,11 +19,10 @@ export const EditForm = ({
    kvartirs,
    setKvartirs,
 }) => {
-   console.log(kvartirs);
    const changePost = async (e) => {
       e.preventDefault();
 
-      let updatedPosts = places.some((item) => item.id === position);
+      let updatedPosts = places.some((item) => item._id === position);
 
       updatedPosts = {
          ...updatedPosts,
@@ -35,7 +34,7 @@ export const EditForm = ({
       };
 
       const response = await fetch(
-         "https://6303a6270de3cd918b3b3fda.mockapi.io/gggg/" + position,
+         "https://gaz-back.herokuapp.com/buildings/" + position,
          {
             method: "PUT",
             headers: {
@@ -49,7 +48,7 @@ export const EditForm = ({
          const updatedPostFromServer = await response.json();
          setPlaces(
             places.map((post) => {
-               if (post.id === updatedPostFromServer.id) {
+               if (post._id === updatedPostFromServer._id) {
                   return updatedPostFromServer;
                }
 

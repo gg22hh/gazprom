@@ -23,14 +23,14 @@ export const Places = ({
       const areYouSure = window.confirm("Are you sure?");
       if (areYouSure) {
          const response = await fetch(
-            "https://6303a6270de3cd918b3b3fda.mockapi.io/gggg/" + id,
+            "https://gaz-back.herokuapp.com/buildings/" + id,
             {
                method: "DELETE",
             }
          );
 
          if (response.ok) {
-            setPlaces(places.filter((place) => place.id !== id));
+            setPlaces(places.filter((place) => place._id !== id));
          } else {
             console.log(`${response.status} - ${response.statusText}`);
          }
@@ -44,12 +44,19 @@ export const Places = ({
       setInfo(place.info);
       setBuilding(place.building);
       setKvartirs(place.kvartir);
-      setPosition(place.id);
+      setPosition(place._id);
    };
 
    const showAllPlaces = () => {
-      setShowOnMap("");
+      setShowOnMap(places);
       setSearch("");
+   };
+
+   const showCurrentPlace = () => {
+      const currentPlace = places.filter((place) =>
+         place.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setShowOnMap(currentPlace);
    };
 
    useEffect(() => {
@@ -62,8 +69,8 @@ export const Places = ({
    const placesList = filtredPlaces?.map((place, i) => {
       return (
          <Place
-            key={place.id}
-            deletePlace={() => deletePlace(place.id)}
+            key={place._id}
+            deletePlace={() => deletePlace(place._id)}
             {...place}
             index={i}
             setShow={setShow}
@@ -81,7 +88,7 @@ export const Places = ({
                value={search}
                onChange={(e) => setSearch(e.target.value)}
             />
-            <button className={s.button} onClick={() => setShowOnMap(search)}>
+            <button className={s.button} onClick={showCurrentPlace}>
                Показать
             </button>
             <button className={s.button} onClick={showAllPlaces}>

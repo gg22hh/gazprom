@@ -16,7 +16,6 @@ export const AddForm = ({ places, setPlaces }) => {
       e.preventDefault();
 
       const newPlace = {
-         id: new Date().getTime(),
          name: name,
          place: [parseFloat(x), parseFloat(y)],
          building: { ...building },
@@ -24,16 +23,13 @@ export const AddForm = ({ places, setPlaces }) => {
          info: { ...info },
       };
 
-      const response = await fetch(
-         "https://6303a6270de3cd918b3b3fda.mockapi.io/gggg/",
-         {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newPlace),
-         }
-      );
+      const response = await fetch("https://gaz-back.herokuapp.com/buildings", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(newPlace),
+      });
 
       if (response.ok) {
          const newPostToServer = await response.json();
@@ -54,7 +50,7 @@ export const AddForm = ({ places, setPlaces }) => {
    return (
       <>
          <button
-            style={{ margin: "20px auto" }}
+            style={{ margin: "20px" }}
             onClick={() => setShowForm(true)}
             className={s.button}
          >
@@ -848,7 +844,11 @@ export const AddForm = ({ places, setPlaces }) => {
                      }
                   />
                </div>
-               <button className={s.button} type="submit">
+               <button
+                  style={{ margin: "10px auto" }}
+                  className={s.button}
+                  type="submit"
+               >
                   Добавить
                </button>
             </form>

@@ -7,23 +7,30 @@ import { Places } from "./components/Places/Places";
 function App() {
    const [places, setPlaces] = useState([]);
    const [search, setSearch] = useState("");
-   const [showOnMap, setShowOnMap] = useState("");
+   const [showOnMap, setShowOnMap] = useState([]);
    useEffect(() => {
       const getPlaces = async () => {
-         fetch(
-            `https://6303a6270de3cd918b3b3fda.mockapi.io/gggg?search=${showOnMap}`
-         )
+         fetch(`https://gaz-back.herokuapp.com/buildings`)
             .then((res) => res.json())
-            .then((arr) => setPlaces(arr));
+            .then((arr) => {
+               setShowOnMap(arr);
+               setPlaces(arr);
+            });
       };
       getPlaces();
-   }, [setPlaces, showOnMap]);
+   }, [setPlaces]);
+
    return (
       <div className="App">
          <div className="content">
-            <Map places={places} />
+            <Map places={showOnMap} />
             <div className="content__info">
-               <AddForm places={places} setPlaces={setPlaces} />
+               <div className="content__info-top">
+                  <div>
+                     Всего <span className="overall">{places.length}</span>
+                  </div>
+                  <AddForm places={places} setPlaces={setPlaces} />
+               </div>
                <Places
                   search={search}
                   setSearch={setSearch}

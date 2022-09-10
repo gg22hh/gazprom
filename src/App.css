@@ -1,46 +1,55 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+   max-width: 1200px;
+   margin: 0 auto;
 }
 .content {
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 }
 .content__info {
-    height: 100vh;
-    width: 35vw;
-    overflow: hidden;
-    overflow-y: scroll;
+   height: 100vh;
+   width: 35vw;
+   overflow: hidden;
+   overflow-y: scroll;
+}
+.content__info-top {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.overall {
+   border: 1px solid black;
+   padding: 2px 5px;
 }
 .popup {
-    height: auto;
+   height: auto;
 }
 .popup__name {
-    font-size: 15px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+   font-size: 15px;
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 10px;
 }
 .popup__info {
-    display: flex;
-    gap: 20px;
+   display: flex;
+   gap: 20px;
 }
 .popup__info-item {
-    min-width: 200px;
+   min-width: 200px;
 }
 .popup__info-item div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid gray;
-    padding: 2px 0;
-    text-align: right;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 10px;
+   border-bottom: 1px solid gray;
+   padding: 2px 0;
+   text-align: right;
 }
 .popup__info-item div strong {
-    text-align: left;
+   text-align: left;
 }
 .leaflet-popup-content-wrapper {
-    width: auto !important;
-    max-height: auto !important;
+   width: auto !important;
+   max-height: auto !important;
 }
